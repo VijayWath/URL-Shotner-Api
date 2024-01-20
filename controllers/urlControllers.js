@@ -12,6 +12,6 @@ async function handelgeneratenewShorlUrl(req, res) {
   return res.json({ id: shortId });
 }
 
-module.exports = {
+export {
   handelgeneratenewShorlUrl,
 };

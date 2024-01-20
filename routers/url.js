@@ -4,6 +4,6 @@ import { handelgeneratenewShorlUrl } from "../controllers/urlControllers.js";
 
 const urlRoute = express.Router();
 
-urlRoute.post("/", handelgeneratenewShorlUrl(req, res));
+urlRoute.post("/", handelgeneratenewShorlUrl);
 
-module.exports = urlRoute;
+export default urlRoute;
