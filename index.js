@@ -19,9 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/url", urlRoute);
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+app.get('/',(req,res)=>{
+  res.render('home');
+})
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
