@@ -6,6 +6,7 @@ async function handelgeneratenewShorlUrl(req, res) {
   if (!req.body.url)
     return res.status(400).render("home", { error: " url is required" });
   await Url.create({
+    createdBy:req.user._id,
     shortId: shortId,
     redirectUrl: req.body.url,
     visitHistory: [],
