@@ -11,6 +11,8 @@ import { checkForAuthentication, restrictTo } from "./middlewares/auth.js";
 
 const app = express();
 const port = process.env.port | 3001;
+
+app.use(express.static('public'));
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
@@ -37,6 +39,10 @@ app.get("/",restrictTo(["NORMAL","ADMIN"]), async (req, res) => {
 
 app.get("/signup", (req, res) => {
   return res.render("signup.ejs");
+});
+
+app.get("/signup", (req, res) => {
+  return res.cookie("token","").redirect("/login");
 });
 
 app.get("/login", (req, res) => {

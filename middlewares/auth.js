@@ -10,6 +10,7 @@ function checkForAuthentication(req, res, next) {
   // const token = authorizationTokenValue.split("Bearer ")[1];
   const user = getUser(authorizationTokenValue);
   req.user = user;
+  console.log(user)
   next();
 }
 

@@ -1,37 +1,28 @@
-
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Url shortner</title>
-  <link rel="stylesheet" href="styles.css">
-
-</head>
-<body class="text-color">
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<div id='title'>
-  <span>
-    <h2 class="main-heading">Make your perfectly average URL !</h2>
-  </span>
-  <br>
-  <% if (locals.error) { %>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <% if (locals.error) { %>
     <h6><%= error %></h6>
     <% } %> <% if (locals.id) { %>
-      <h3>Url Created</h3>
     <p>Url Generated : http://localhost:3001/url/<%= id %></p>
     <% } %>
-  <span>
-    <div class="main-container">
+    <h2>URL shortning service</h2>
+    <div>
       <form action="/url" method="post">
         <label for="">Enter URL</label>
-        <input class="input" name="url" type="text" placeholder="Paste Longggg URL here" />
-        <button class="submit-btn" type="submit">Generate</button>
+        <input name="url" type="text" placeholder="www.google.com" />
+        <button type="submit">Generate</button>
       </form>
     </div>
-    <div class="main-container">
+    <form action="/logout" method="post">
+      <button type="submit">logout</button>
+    </form>
+    <div>
       <% if (locals.urls) { %>
       <table>
         <thead>
@@ -53,7 +44,5 @@
       </table>
       <% } %>
     </div>
-  </span>
-</div>
-</body>
+  </body>
 </html>

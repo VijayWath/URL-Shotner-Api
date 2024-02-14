@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,4 +22,47 @@
       <button type="submit">signup</button>
     </form>
   </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body class="body">
+<form action="/user/login" method="post">
+  <div class="ring">
+    <i style="--clr:#00ff0a;"></i>
+    <i style="--clr:#ff0057;"></i>
+    <i style="--clr:#fffd44;"></i>
+    <div class="login">
+      <h2>Login</h2>
+      <div class="inputbx">
+        <input name="email" type="text" placeholder="email">
+      </div>
+      <div class="inputbx">
+        <input name="password" type="password" placeholder="Password">
+      </div>
+      <div class="inputbx">
+        <input type="submit" value="Login in">
+      </div>
+      <div class="links">
+        <a href="#">Forget Password</a>
+        <form action="/signup" method="get">
+          <a href="#" onclick="signup()">Signup</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+<script>
+  function signup() {
+            window.location.href = "/signup";
+        }
+</script>
 </html>

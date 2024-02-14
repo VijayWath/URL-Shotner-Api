@@ -1,5 +1,4 @@
 import User from "../Models/users.js";
-import { v4 as uuidv4 } from "uuid";
 import { setUser, getUser } from "../service/auth.js";
 
 async function handelUserSignUp(req, res) {
